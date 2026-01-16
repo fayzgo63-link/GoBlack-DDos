@@ -90,7 +90,7 @@ func sendJobsToWorkers(jobCount int, jobs chan int){
 	for j := 0; j <= jobCount; j++ {
 		jobs <- j
 	} 
-	log.Println("Jobs placed in buff3r.")
+	log.Println("Jobs placed in buffer.")
 	close(jobs) 	
 }
 
