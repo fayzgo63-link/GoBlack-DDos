@@ -36,7 +36,7 @@ func httpAttackWorker(workerID int, jobs chan int, result chan int) {
 					continue
 				}
 		
-				log.Printf("Workgood: %d - Job:%d - Target Hit! \n", workerID, job)
+				log.Printf("\033[48;5;2m\033[38;5;0mWorkgood:\033[0m %d - Job:%d - \033[32mTarget Hit! \n", workerID, job)
 				result <- 1 
 			}
 		case 443:
